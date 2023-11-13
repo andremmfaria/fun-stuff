@@ -13,5 +13,7 @@ function prompt {
 	"$pr "
 }
 
-function lsext { Get-Childitem -Force }
-Set-Alias -Name "ll" -Value lsext
+function ll() { 
+	param ([string[]]$Path)
+	Get-Childitem -Force $path 
+}
