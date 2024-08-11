@@ -107,7 +107,7 @@ $ShowPkgs = @("winget")
     "local_ip"
     "public_ip"
     "blank"
-    "weather"
+    # "weather"
     # "colorbar"
 )
 
