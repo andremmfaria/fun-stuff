@@ -1,4 +1,6 @@
-﻿function prompt {
+$env:Path += ";$env:USERPROFILE\AppData\Local\Programs\oh-my-posh\bin;$env:ProgramFiles\Vim\vim91;"
+
+function prompt {
     $loc = $PWD.Path.Replace("\","/")
     $upr = $env:USERPROFILE.Replace("\","/")
         $pr = $env:USERNAME + "@" + $env:COMPUTERNAME + ":[" + "<rep>" + "]$"
@@ -37,8 +39,6 @@ Import-Module posh-git
 Import-Module PSFzf
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
 
-Import-Module oh-my-posh
-Set-Theme Agnoster
+oh-my-posh --init --shell pwsh --config "$env:POSH_THEMES_PATH\agnoster.omp.json" | Invoke-Expression
 
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
-
