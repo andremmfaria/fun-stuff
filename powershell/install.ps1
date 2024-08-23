@@ -1,5 +1,8 @@
 # Install terminal things script
 
+echo "Installing vim... (accept any prompt message that appears)"
+winget install --id vim.vim -s winget
+
 echo "Installing git and posh-git... (accept any prompt message that appears)"
 winget install --id Git.Git -s winget
 Install-Module posh-git -Scope CurrentUser -Force
