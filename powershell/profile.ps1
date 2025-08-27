@@ -60,7 +60,8 @@ function which {
     }
 }
 
-. $env:USERPROFILE\Documents\WindowsPowerShell\Scripts\import-ssh-copy-id.ps1
+. $env:USERPROFILE\Documents\WindowsPowerShell\Scripts\grep.ps1
+. $env:USERPROFILE\Documents\WindowsPowerShell\Scripts\ssh-copy-id.ps1
 
 $configPath = "$env:USERPROFILE\.config\winfetch\config.ps1"
 if (Get-InstalledScript -Name winfetch -ErrorAction Ignore) {
@@ -89,3 +90,4 @@ $themes = @(
 oh-my-posh init pwsh --config $(Get-Random -InputObject $themes) | Invoke-Expression
 
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+
